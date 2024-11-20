@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  weather-classifier:
+    image: weather-classifier
+    container_name: weather-classifier
+    volumes:
+      - "C:/Users/User/Documents/EFREI/Semestre_9/Applications of Big Data/TestProjet/input_images:/input"
+      - "C:/Users/User/Documents/EFREI/Semestre_9/Applications of Big Data/TestProjet/output_predictions:/output"
+    command: >
+      sh -c "python /app/predict.py --input_dir /input --output_dir /output"
