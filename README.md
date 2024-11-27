@@ -69,10 +69,10 @@ mkdir output_predictions
 Build the Docker image using the provided `Dockerfile`:
 
 ```bash
-docker build -t Projet_Applications_of_Big_Data .
+docker build -t weather-classifier .
 ```
 
-This command builds the image and tags it as `Projet_Applications_of_Big_Data`.
+This command builds the image and tags it as `weather-classifier`.
 
 ### Step 5: Run the Docker Container
 
@@ -82,7 +82,7 @@ Run the application using Docker, mounting the input and output directories:
 docker run --rm \
   -v "$(pwd)/input_images:/input" \
   -v "$(pwd)/output_predictions:/output" \
-  Projet_Applications_of_Big_Data
+  weather-classifier
 ```
 
 - **Explanation**:
@@ -95,13 +95,13 @@ docker run --rm \
 - On Command Prompt:
 
   ```cmd
-  docker run --rm -v "%cd%/input_images:/input" -v "%cd%/output_predictions:/output" Projet_Applications_of_Big_Data
+  docker run --rm -v "%cd%/input_images:/input" -v "%cd%/output_predictions:/output" weather-classifier
   ```
 
 - On PowerShell:
 
   ```powershell
-  docker run --rm -v "${PWD}/input_images:/input" -v "${PWD}/output_predictions:/output" Projet_Applications_of_Big_Data
+  docker run --rm -v "${PWD}/input_images:/input" -v "${PWD}/output_predictions:/output" weather-classifier
   ```
 
 ## Usage
