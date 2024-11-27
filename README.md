@@ -36,7 +36,7 @@ cd Projet_Applications_of_Big_Data
 
 You need the `ResNet152V2-Weather-Classification-03.h5` model file to run the application.
 
-#### Option A : Download from Kaggle (Manual Download)
+#### Download from Kaggle (Manual Download)
 
 1. **Navigate to the Dataset Page** :
 
