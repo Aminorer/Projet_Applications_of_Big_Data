@@ -28,8 +28,8 @@ This project is an image classification application that categorizes weather ima
 Open your terminal and run:
 
 ```bash
-git clone https://github.com/yourusername/weather-classifier.git
-cd weather-classifier
+git clone https://github.com/Aminorer/Projet_Applications_of_Big_Data.git
+cd Projet_Applications_of_Big_Data
 ```
 
 ### Step 2: Obtain the Pre-trained Model
