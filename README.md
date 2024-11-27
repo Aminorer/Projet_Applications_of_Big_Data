@@ -48,7 +48,7 @@ You need the `ResNet152V2-Weather-Classification-03.h5` model file to run the ap
 
 3. **Place the Model File** :
 
-   - Move the downloaded `.h5` file to the root directory of the project (`weather-classifier`).
+   - Move the downloaded `.h5` file to the root directory of the project (`Projet_Applications_of_Big_Data`).
 
 **Note** : The model file is large 
 
@@ -69,10 +69,10 @@ mkdir output_predictions
 Build the Docker image using the provided `Dockerfile`:
 
 ```bash
-docker build -t weather-classifier .
+docker build -t Projet_Applications_of_Big_Data .
 ```
 
-This command builds the image and tags it as `weather-classifier`.
+This command builds the image and tags it as `Projet_Applications_of_Big_Data`.
 
 ### Step 5: Run the Docker Container
 
@@ -82,7 +82,7 @@ Run the application using Docker, mounting the input and output directories:
 docker run --rm \
   -v "$(pwd)/input_images:/input" \
   -v "$(pwd)/output_predictions:/output" \
-  weather-classifier
+  Projet_Applications_of_Big_Data
 ```
 
 - **Explanation**:
@@ -95,13 +95,13 @@ docker run --rm \
 - On Command Prompt:
 
   ```cmd
-  docker run --rm -v "%cd%/input_images:/input" -v "%cd%/output_predictions:/output" weather-classifier
+  docker run --rm -v "%cd%/input_images:/input" -v "%cd%/output_predictions:/output" Projet_Applications_of_Big_Data
   ```
 
 - On PowerShell:
 
   ```powershell
-  docker run --rm -v "${PWD}/input_images:/input" -v "${PWD}/output_predictions:/output" weather-classifier
+  docker run --rm -v "${PWD}/input_images:/input" -v "${PWD}/output_predictions:/output" Projet_Applications_of_Big_Data
   ```
 
 ## Usage
@@ -159,7 +159,7 @@ docker run --rm \
 ## Project Structure
 
 ```
-weather-classifier/
+Projet_Applications_of_Big_Data/
 ├── predict.py
 ├── requirements.txt
 ├── Dockerfile
