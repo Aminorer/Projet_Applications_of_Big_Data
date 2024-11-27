@@ -203,6 +203,8 @@ weather-classifier/
 ├── ResNet152V2-Weather-Classification-03.h5
 ├── input_images/
 ├── output_predictions/
+│   └── old/
+
 ```
 
 - **predict.py**: Main application script.
