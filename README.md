@@ -6,33 +6,33 @@ This project is an image classification application that categorizes weather ima
 
 ## Features
 
-- **Weather Classification**: Classifies images into one of the following categories:
+- **Weather Classification** : Classifies images into one of the following categories:
   - `cloudy`
   - `foggy`
   - `rainy`
   - `shine`
   - `sunrise`
-- **Efficient Processing**: Skips images that have already been processed to save time.
-- **Result Logging**: Saves classification results with timestamps for easy tracking.
-- **Dockerized Application**: Run the application within a Docker container for consistency and ease of setup.
+- **Efficient Processing** : Skips images that have already been processed to save time.
+- **Result Logging** : Saves classification results with timestamps for easy tracking.
+- **Dockerized Application** : Run the application within a Docker container for consistency and ease of setup.
 
 ## Prerequisites
 
-- **Docker**: Ensure Docker is installed on your machine.
+- **Docker** : Ensure Docker is installed on your machine.
   - [Install Docker](https://docs.docker.com/get-docker/) if you haven't already.
 
 ## Installation and Setup
 
-### Step 1: Clone the Repository
+### Step 1 : Clone the Repository
 
-Open your terminal and run:
+Open your terminal and run :
 
 ```bash
 git clone https://github.com/Aminorer/Projet_Applications_of_Big_Data.git
 cd Projet_Applications_of_Big_Data
 ```
 
-### Step 2: Obtain the Pre-trained Model
+### Step 2 : Obtain the Pre-trained Model
 
 You need the `ResNet152V2-Weather-Classification-03.h5` model file to run the application.
 
@@ -40,7 +40,7 @@ You need the `ResNet152V2-Weather-Classification-03.h5` model file to run the ap
 
 1. **Navigate to the Dataset Page** :
 
-   - Visit the dataset page: [Weather Classification ResNet152V2](https://www.kaggle.com/datasets/utkarshsaxenadn/weather-classification-resnet152v2).
+   - Visit the dataset page : [Weather Classification ResNet152V2](https://www.kaggle.com/datasets/utkarshsaxenadn/weather-classification-resnet152v2).
 
 2. **Download the Model File** :
 
@@ -62,9 +62,9 @@ mkdir output_predictions
 ```
 
 - **Input Images**: Place the images you want to classify into the `input_images` directory.
-- **Supported Image Formats**: `.jpg`
+- **Supported Image Formats** : `.jpg`
 
-### Step 4: Build the Docker Image
+### Step 4 : Build the Docker Image
 
 Build the Docker image using the provided `Dockerfile`:
 
@@ -74,9 +74,9 @@ docker build -t weather-classifier .
 
 This command builds the image and tags it as `weather-classifier`.
 
-### Step 5: Run the Docker Container
+### Step 5 : Run the Docker Container
 
-Run the application using Docker, mounting the input and output directories:
+Run the application using Docker, mounting the input and output directories :
 
 ```bash
 docker run --rm \
@@ -85,20 +85,20 @@ docker run --rm \
   weather-classifier
 ```
 
-- **Explanation**:
+- **Explanation** :
   - `--rm`: Automatically removes the container when it exits.
   - `-v "$(pwd)/input_images:/input"`: Mounts the `input_images` directory to `/input` in the container.
   - `-v "$(pwd)/output_predictions:/output"`: Mounts the `output_predictions` directory to `/output` in the container.
 
-**Note for Windows Users**:
+**For Windows** :
 
-- On Command Prompt:
+- On Command Prompt :
 
   ```cmd
   docker run --rm -v "%cd%/input_images:/input" -v "%cd%/output_predictions:/output" weather-classifier
   ```
 
-- On PowerShell:
+- On PowerShell :
 
   ```powershell
   docker run --rm -v "${PWD}/input_images:/input" -v "${PWD}/output_predictions:/output" weather-classifier
@@ -106,19 +106,19 @@ docker run --rm \
 
 ## Usage
 
-- **Place Images**: Add the images you want to classify into the `input_images` directory.
-- **Run the Application**: Use the Docker command from Step 5 to run the classifier.
-- **View Results**: After processing, check the `output_predictions` directory for the CSV output.
+- **Place Images** : Add the images you want to classify into the `input_images` directory.
+- **Run the Application** : Use the Docker command from Step 5 to run the classifier.
+- **View Results** : After processing, check the `output_predictions` directory for the CSV output.
 
 ## Understanding the Output
 
-- **CSV Output File**: A file named `predictions_YYYYMMDD_HHMMSS.csv` will be created in the `output_predictions` directory.
-- **CSV Columns**:
+- **CSV Output File** : A file named `predictions_YYYYMMDD_HHMMSS.csv` will be created in the `output_predictions` directory.
+- **CSV Columns** :
   - `image_name`: Name of the image file.
   - `prediction_label`: Predicted weather category.
   - `first_analysis`:
-    - `yes`: Image was analyzed for the first time.
-    - `no`: Prediction was retrieved from previous results.
+    - `yes` : Image was analyzed for the first time.
+    - `no` : Prediction was retrieved from previous results.
 
 ## How It Works
 
@@ -182,7 +182,7 @@ Projet_Applications_of_Big_Data/
 
 All dependencies are included in the Docker image.
 
-- **Python Packages**:
+- **Python Packages** :
   - `tensorflow`
   - `keras`
   - `numpy`
@@ -193,9 +193,9 @@ All dependencies are included in the Docker image.
 
 ## Contact
 
-For questions or support, please contact:
+For questions or support, please contact :
 
-- **BELAHBIB Amine**
+- **BELAHBIB Amine**,**Rémy Dimakiche**
 - **Email**: [amine.belahbib@efrei.net](mailto:amine.belahbib@efrei.net)
 - **GitHub**: [Aminorer](https://github.com/Aminorer)
 
