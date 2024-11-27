@@ -212,6 +212,7 @@ weather-classifier/
 - **Dockerfile**: Defines how to build the Docker image.
 - **input_images/**: Directory to place input images.
 - **output_predictions/**: Directory where output CSV files will be saved.
+- **output_predictions/old/**: Directory containing previous prediction CSV files.
 - **ResNet152V2-Weather-Classification-03.h5**: Pre-trained model file (must be obtained separately).
 
 ## Dependencies
