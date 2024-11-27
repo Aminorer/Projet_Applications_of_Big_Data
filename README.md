@@ -195,7 +195,7 @@ All dependencies are included in the Docker image.
 
 For questions or support, please contact :
 
-- **BELAHBIB Amine**,**Rémy Dimakiche**
+- **Amine BELAHBIB , Rémy DIMACHKIE , Zakaria EL FERDI, Yanis BESTAOUI**
 - **Email**: [amine.belahbib@efrei.net](mailto:amine.belahbib@efrei.net)
 - **GitHub**: [Aminorer](https://github.com/Aminorer)
 
