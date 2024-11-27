@@ -36,62 +36,25 @@ cd Projet_Applications_of_Big_Data
 
 You need the `ResNet152V2-Weather-Classification-03.h5` model file to run the application.
 
-#### Option A: Download from Kaggle
+#### Option A : Download from Kaggle (Manual Download)
 
-1. **Sign Up or Log In to Kaggle**:
-
-   - Go to [Kaggle](https://www.kaggle.com/) and sign up for an account if you don't have one.
-
-2. **Obtain Kaggle API Credentials**:
-
-   - Click on your profile picture in the top right corner and select **"Account"**.
-   - Scroll down to the **"API"** section and click **"Create New API Token"**.
-   - A file named `kaggle.json` will be downloaded.
-
-3. **Place `kaggle.json` in the Project Directory**:
-
-   - Move the `kaggle.json` file to the root directory of the project (`weather-classifier`).
-
-4. **Download the Model Using the Kaggle API**:
-
-   - Run the following commands in your terminal:
-
-     ```bash
-     docker run --rm -v "$(pwd)":/app -w /app python:3.8-slim bash -c "\
-       pip install kaggle && \
-       mkdir -p /root/.kaggle && \
-       cp kaggle.json /root/.kaggle/ && \
-       chmod 600 /root/.kaggle/kaggle.json && \
-       kaggle datasets download -d utkarshsaxenadn/weather-classification-resnet152v2 --unzip -f ResNet152V2-Weather-Classification-03.h5"
-     ```
-
-   - This command uses a temporary Docker container to download the model file directly into your project directory.
-
-5. **Verify the Model File**:
-
-   - Ensure that the file `ResNet152V2-Weather-Classification-03.h5` is now present in your project directory.
-
-#### Option B: Manual Download (Alternative)
-
-If you prefer to download the model manually:
-
-1. **Navigate to the Dataset Page**:
+1. **Navigate to the Dataset Page** :
 
    - Visit the dataset page: [Weather Classification ResNet152V2](https://www.kaggle.com/datasets/utkarshsaxenadn/weather-classification-resnet152v2).
 
-2. **Download the Model File**:
+2. **Download the Model File** :
 
    - Download `ResNet152V2-Weather-Classification-03.h5` from the dataset.
 
-3. **Place the Model File**:
+3. **Place the Model File** :
 
    - Move the downloaded `.h5` file to the root directory of the project (`weather-classifier`).
 
-**Note**: The model file is large (~230 MB). Ensure you have sufficient disk space.
+**Note** : The model file is large 
 
-### Step 3: Prepare Input and Output Directories
+### Step 3 : Prepare Input and Output Directories
 
-Create directories for input images and output predictions:
+Create directories for input images and output predictions :
 
 ```bash
 mkdir input_images
@@ -99,7 +62,7 @@ mkdir output_predictions
 ```
 
 - **Input Images**: Place the images you want to classify into the `input_images` directory.
-- **Supported Image Formats**: `.jpg`, `.jpeg`, `.png`
+- **Supported Image Formats**: `.jpg`
 
 ### Step 4: Build the Docker Image
 
@@ -213,7 +176,7 @@ weather-classifier/
 - **input_images/**: Directory to place input images.
 - **output_predictions/**: Directory where output CSV files will be saved.
 - **output_predictions/old/**: Directory containing previous prediction CSV files.
-- **ResNet152V2-Weather-Classification-03.h5**: Pre-trained model file (must be obtained separately).
+- **ResNet152V2-Weather-Classification-03.h5**: Pre-trained model file.
 
 ## Dependencies
 
@@ -227,34 +190,6 @@ All dependencies are included in the Docker image.
   - `tqdm`
   - `Pillow`
 
-## Advanced Usage
-
-### Customizing Input and Output Paths
-
-If you wish to use different directories for input and output, modify the Docker run command:
-
-```bash
-docker run --rm \
-  -v "/path/to/your/images:/input" \
-  -v "/path/to/your/output:/output" \
-  weather-classifier
-```
-
-### Rebuilding the Docker Image
-
-If you make changes to the `predict.py` script or other code, rebuild the Docker image:
-
-```bash
-docker build -t weather-classifier .
-```
-
-## Cleaning Up
-
-To remove the Docker image from your system:
-
-```bash
-docker rmi weather-classifier
-```
 
 ## Contact
 
